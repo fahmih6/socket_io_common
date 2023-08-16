@@ -15,7 +15,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:socket_io_common/src/engine/parser/wtf8.dart';
+import 'package:socket_io_common_shipper/src/engine/parser/wtf8.dart';
 
 // Protocol version
 final protocol = 4;
@@ -47,7 +47,7 @@ final SEPARATOR = String.fromCharCode(30);
 class PacketParser {
   static const ERROR_PACKET = const {'type': 'error', 'data': 'parser error'};
   static String? encodePacket(Map packet,
-      {dynamic? supportsBinary,
+      {dynamic supportsBinary,
       utf8encode = false,
       required callback(_),
       bool fromClient = false}) {
